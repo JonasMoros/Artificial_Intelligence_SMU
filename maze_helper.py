@@ -5,7 +5,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import colors
 
-
 # -
 
 def parse_maze(maze_str):
@@ -17,7 +16,7 @@ def parse_maze(maze_str):
 
 # This is modified code I found on StackOverflow, at this link
 # https://stackoverflow.com/questions/43971138/python-plotting-colored-grid-based-on-values
-def show_maze(maze, fontsize = 10):  
+def show_maze(maze,path,fontsize = 10):  
     """display a maze (numpy array)"""
    
     cmap = colors.ListedColormap(['white', 'black', 'blue', 'green', 'red', 'gray', 'orange'])
@@ -27,7 +26,10 @@ def show_maze(maze, fontsize = 10):
     
     goal = find_pos(maze, 'G')
     start = find_pos(maze, 'S')
-    
+
+    for x in path: 
+        x == "P"
+
     # Converts all tile types to integers
     maze[maze == ' '] = 0
     maze[maze == 'X'] = 1 # wall
